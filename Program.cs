@@ -4,39 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Programación
+namespace Tarea_2
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-            //Problema 1
-
-            Console.Write("Para el triángulo rectangulo XZY ingrese los valores de los lados Z y Y conocidos ");
+            //Problema 2
+            Console.Write("Para el triángulo rectangulo tzy ingrese los valores de t y el ángulo a ");
             Console.WriteLine("");
-            Console.Write("Valor Z = ");
-            double z = double.Parse(Console.ReadLine());
-            Console.Write("Valor Y = ");
-            double y = double.Parse(Console.ReadLine());
-       
-            // Solucion
-            Console.Write("Valor lado X = ");
-            double x = Math.Sqrt(z * z + y * y);
-            Console.WriteLine(x);
+            Console.Write("Valor del lado t = ");
+            double t = double.Parse(Console.ReadLine());
+            Console.Write("Valor del ángulo a (en grados) = ");
+            double a = double.Parse(Console.ReadLine());
 
-            Console.Write("Valor del ángulo w = ");
-            double w = Math.Asin((1*z)/x);
-            double w1 = (w * 180.0) / (Math.PI);
-            Console.WriteLine(w1);
-
+            // Ángulo v
             Console.Write("Valor del ángulo v = ");
-            double v = (180 - 90 - w1);
+
+            double v = (180 - 90 - a);
             Console.WriteLine(v);
+            double v1 = v * (Math.PI / 180);
+            
+            // Lado z
+            Console.Write("Valor del lado z = ");
+
+            double z = (Math.Sin(v1)*t / 1 );
+            Console.Write(z);
+
+            // Lado y
+            Console.Write(" Valor del lado y = ");
+
+            double y = Math.Sqrt(t * t - z * z);
+            Console.WriteLine(y);            
 
 
 
         }
-
     }
 }
