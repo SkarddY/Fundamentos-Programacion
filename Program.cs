@@ -4,59 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desafio
+class Program
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
 
-            Console.WriteLine("Coloca tu peso y estatura");
-            Console.Write("Peso ");
-            double p = double.Parse(Console.ReadLine());
-            Console.Write("Estatura ");
-            double e = double.Parse(Console.ReadLine());
+    static void Main() {
+        //Coordenadas para la pendiente
 
-            double IMC = p / e;
+        Console.Write("Ingrese coordenadas en x1 "); 
+        double x1 = double.Parse(Console.ReadLine());
 
-            if (IMC < 15)
-            {
-                Console.WriteLine("Delgadez muy severa");
-            }
-            else if (15.1 <= IMC & IMC <= 15.9)
-            {
-                Console.WriteLine("Delgadez severa");
-            }
-            else if (16 <= IMC & IMC <= 18.4)
-            {
-                Console.WriteLine("Delgadez");
+        Console.Write("Ingrese coordenadas en y1 "); 
+        double y1 = double.Parse(Console.ReadLine());
 
-            }
-            else if (18.5 <= IMC & IMC <= 24.9)
-            {
-                Console.WriteLine("Peso saludable");
-            }
-            else if (25 <= IMC & IMC <= 29.9)
-            {
-                Console.WriteLine("Sobrepeso");
-            }
-            else if (30 <= IMC & IMC <= 34.9)
-            {
-                Console.WriteLine("Obesidad moderada");
-            }
-            else if (35 <= IMC & IMC <= 39.9)
-            {
-                Console.WriteLine("Obesidad severa");
-            }
-            else if (IMC > 40)
-            {
-                Console.WriteLine("Obesidad morbida");
-            }
+        Console.Write("Ingrese coordenadas en x2 "); 
+        double x2 = double.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese coordenadas en y2 "); 
+        double y2 = double.Parse(Console.ReadLine());
+        Console.Write("Pendiente ");
+        double m = (y2 - y1) / (x2 - x1);
+        Console.WriteLine(m);
+
+        //Intercepto
+        Console.Write("Intercepto ");
+        double b = y1 - m * x1;
+        Console.WriteLine(b);
+
+        //Distancia
+        Console.Write("Distancia ");
+        double d = Math.Sqrt(y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1);
+        Console.WriteLine)(d);
 
 
-            Console.WriteLine(IMC);
 
-        }
+
+
 
 
     }
